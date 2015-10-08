@@ -53,7 +53,6 @@ TopDownGame.Game.prototype = {
     //create player
     var result = this.findObjectsByType('playerStart', this.map, 'playerStart');
 
-
     //we know there is just one result
     this.player = this.game.add.sprite(result[0].x, result[0].y, 'player');
     this.game.physics.arcade.enable(this.player);
@@ -71,8 +70,7 @@ TopDownGame.Game.prototype = {
     //add non-player spritesheets
     this.zeldaBullet = this.game.add.sprite('zeldaBullet');
     this.goons = this.game.add.sprite('goonDown');
-    this.chickens = this.game.add.sprite('chicken')
-
+    this.chickens = this.game.add.sprite('chicken');
 
     //move player with cursor keys
     this.cursors = this.game.input.keyboard.createCursorKeys();
@@ -168,7 +166,6 @@ TopDownGame.Game.prototype = {
 
     this.tween = this.game.add.tween(this.chickens).to( { x: 100 }, 2000, Phaser.Easing.Linear.None, true, 0, 1000, true);
   },
-
 
   //find objects in a TIled layer that containt a property called "type" equal to a certain value
   findObjectsByType: function(type, map, layer) {
